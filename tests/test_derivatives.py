@@ -423,7 +423,7 @@ def cloud(mie_mono_table,ext,veff,reff,ssalb,solarmu,surfacealb,ground_temperatu
             solver.load_solution(load_solution)
         solvers.add_solver(wavelength,solver)
 
-    Sensordict.get_measurements(solvers, maxiter=200, n_jobs=1, verbose=False)
+    Sensordict.get_measurements(solvers, maxiter=200, n_jobs=4, verbose=False)
     return solvers, Sensordict, cloud_poly_tables, step, rte_grid
 
 class ThermalJacobianNoSurface(TestCase):
